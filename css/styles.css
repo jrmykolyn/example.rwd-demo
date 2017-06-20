@@ -3,9 +3,18 @@
 /* -------------------------------------------------- */
 /*
 - Identify colours.
+	- White: #fff;
+	- Off-black: #222;
+	- Grey: #999;
+	- Grey (dark): #555;
+	- Grey (light): #ecf0f1;
+	- Accent: #1abc9c;
+	- Accent (dark): #13af90;
 - Identify layouts.
 - Identify breakpoints.
-- Built 'base' styles.
+- Identify 'default' dimensions on layout elements.
+- Identify maximum dimensions of layout elements.
+- Build 'base' styles.
 - Build 'conditional' (eg. media query) styles.
 */
 
@@ -35,33 +44,37 @@ body {
 /* BASE STYLES */
 /* -------------------------------------------------- */
 html {
-	font-size: 62.5%; /* ... */
+	/*
+	The 'browser default' size for 1em/rem is 16px.
+	By setting the `font-size` property on <html> tag, we're able to define a 'custom rem' value.
+	*/
+	font-size: 62.5%; /* 10px / 16px = 0.625 (62.5%) */
 	font-family: 'Overpass', Helvetica, Arial, sans-serif;
 }
 
 body {
-	color: #333;
+	color: #222;
 	background-color: #ecf0f1;
 	line-height: 1.5;
 }
 
 header {
 	width: 100%;
-	height: 5rem;
+	height: 5rem; /* 50px / 10px = 5rem */
 	display: block;
-	background: #FFF;
+	background: #fff;
 	padding: 0 2rem;
 }
 
 main {
 	width: 100%;
-	max-width: 120rem; /* ... */
+	max-width: 120rem; /* 1200px / 10px = 120rem */
 	display: block;
 	overflow: auto;
 }
 
 img {
-	max-width: 100%;
+	max-width: 100%; /* Constrain images to size of parent container. */
 }
 
 a,
@@ -78,16 +91,15 @@ a:active {
 
 button {
 	width: 94%;
-	max-width: 40rem;
+	max-width: 40rem; /* 400px / 10px = 40rem */
 	display: block;
-	color: #FFF;
+	color: #fff;
 	background: #1abc9c;
 	border: none;
-	border-radius: 0.2rem;
-	margin: 4rem auto 4rem;
+	margin: 4rem auto 4rem; /* 40px / 10px = 4rem */
 	padding: 2rem 1rem;
 
-	font-size: 1.6rem;
+	font-size: 1.6rem; /* 16px / 10px = 1.6rem */
 	font-weight: 600;
 	text-transform: uppercase;
 }
@@ -104,20 +116,16 @@ button:focus {
 	font-family: 'Jaldi', Helvetica, Arial, sans-serif;
 	font-size: 2rem; /* 20px / 10px = 2rem */
 	font-weight: 700;
-	line-height: 5rem;
+	line-height: 5rem; /* Setting the `line-height` equal to the height of the parent element causes the text to become vertically centred */
 	text-align: center;
-}
-
-.brand-main {
-	letter-spacing: 0.1rem; /* ... */
 }
 
 .brand-supporting {
 	display: none;
-	font-family: 'Overpass';
-	font-size: 1.8rem;
+	color: #999;
+	font-family: 'Overpass'; /* FIXME */
+	font-size: 1.8rem; /* 18px / 10px = 1.8rem */
 	font-weight: 400;
-	color: #888;
 }
 
 /* INTRO STYLES */
@@ -127,9 +135,9 @@ button:focus {
 
 /* POST STYLES */
 .post {
-	background: #FFF;
+	background: #fff;
 	box-shadow: 0 0.5rem 2rem rgba( 0, 0, 0, 0.15 );
-	margin-bottom: 4rem;
+	margin-bottom: 4rem; /* 40px / 10px = 4rem */
 	float: left;
 }
 
@@ -138,8 +146,8 @@ button:focus {
 }
 
 .post div {
-	padding: 1.5rem; /* ... */
-	padding-bottom: 2rem;
+	padding: 1.5rem; /* 15px / 10px = 1.5rem */
+	padding-bottom: 2rem; /* 20px / 10px = 2rem */
 }
 
 .post img {
@@ -148,19 +156,18 @@ button:focus {
 
 .post h2 {
 	color: #1abc9c;
-	font-family: 'Jaldi';
-	font-size: 8.75vw; /* ... */
-	margin-bottom: 1rem; /* ... */
+	font-family: 'Jaldi'; /* FIXME */
+	font-size: 8.75vw; /* 28px / 320px (eg. mobile screen width) = 0.0875 (8.75vw) */
+	margin-bottom: 1rem; /* 10px / 10px = 1rem */
 }
 
 .post p {
-	font-size: 4.375vw; /* ... */
+	font-size: 4.375vw; /* 14px / 320px (eg. mobile screen width) = 0.04375 (4.375vw) */
 }
 
 .post h3 {
 	margin-bottom: 0;
-	font-size: 0.875em;
-	font-size: 3.75vw; /* ... */
+	font-size: 3.75vw; /* 12px / 32px (eg. mobile screen width) = 0.0375 (3.75vw) */
 }
 
 /* FOOTER STYLES */
@@ -169,13 +176,13 @@ footer {
 	height: auto;
 	display: block;
 	color: #999;
-	background: #222; /* ... */
+	background: #222;
 	padding: 3rem 2rem;
-	font-size: 1.4rem;
+	font-size: 1.5rem; /* 15px / 10px = 1.5rem */
 }
 
 footer h3 {
-	font-size: 1.5em;
+	font-size: 1.333333em; /* 20px / 15px (`font-size` of parent) = 1.333333em */
 	color: #1abc9c;
 }
 
@@ -184,8 +191,8 @@ footer p {
 }
 
 .info {
-	width: 94%;
-	max-width: 120rem; /* ... */
+	width: 94%; /* Element should never span 100% of available horizontal space. */
+	max-width: 120rem; /* 1200px / 10px = 120rem */
 	margin: 0 auto;
 	overflow: auto;
 }
@@ -193,7 +200,7 @@ footer p {
 .about,
 .contact,
 .sponsors {
-	margin-bottom: 3rem;
+	margin-bottom: 3rem; /* 30px / 10px = 3rem */
 }
 
 .sponsors img {
@@ -210,22 +217,22 @@ footer p {
 /* -------------------------------------------------- */
 @media all and (min-width: 600px) {
 	header {
-		height: 6rem;
+		height: 6rem; /* 60px / 10px = 10rem */
 	}
 
 	main {
-		width: 94%;
+		width: 94%; /* Element should never span 100% of available horizontal space. */
 		margin: 0 auto;
 		padding: 4rem 2rem;
 	}
 
 	.brand {
-		width: 94%;
-		max-width: 120rem; /* ... */
+		width: 94%; /* Element should never span 100% of available horizontal space. */
+		max-width: 120rem; /* 1200px / 10px = 120rem */
 		margin: 0 auto;
-		font-size: 2.8rem; /* ... */
+		font-size: 2.8rem; /* 28px / 10px = 2.8rem */
 		text-align: left;
-		line-height: 6rem;
+		line-height: 6rem; /* 60px / 10px = 6rem */
 	}
 
 	.brand-supporting {
@@ -237,15 +244,15 @@ footer p {
 	}
 
 	.post h2 {
-		font-size: 2em; /* 2 * 14px (1.4rem) = 28px */
+		font-size: 2em; /* 28px / 14px (`font-size` of parent) = 2em */
 	}
 
 	.post p {
-		font-size: 1em; /* 14px / 14px = 1em */
+		font-size: 1em; /* 14px / 14px (`font-size` of parent) = 1em */
 	}
 
 	.post h3 {
-		font-size: 0.875em; /* 12px / 14px = 1em */
+		font-size: 0.875em; /* 12px / 14px (`font-size` of parent) = 0.875em  */
 	}
 }
 
@@ -261,15 +268,11 @@ footer p {
 }
 
 @media all and (min-width: 960px) {
-	button {
-		width: 32%;
-	}
-
 	.intro {
 		width: 66%; /* TODO */
 		display: block;
 		margin: 0;
-		margin-bottom: 4rem;
+		margin-bottom: 4rem; /* 40px / 10px = 4rem */
 		padding: 0;
 		text-align: left;
 	}
@@ -282,16 +285,16 @@ footer p {
 	.intro h2 {
 		color: #1abc9c;
 		display: inline-block;
-		margin-bottom: 3rem;
-		padding-bottom: 0.3rem;
+		margin-bottom: 3rem; /* 30px / 10px = 3rem */
+		padding-bottom: 0.3rem; /* 3px / 10px = 0.3rem */
 		border-bottom: 0.5rem #1abc9c solid;
-		font-size: 6rem; /* ... */
-		font-family: 'Jaldi';
-		line-height: 1.2;
+		font-size: 6rem; /* 60px / 10px = 6rem */
+		font-family: 'Jaldi'; /* FIXME */
+		line-height: 1.2; /* 72px / 60px (`font-size` of element) = 1.2 */
 	}
 
 	.intro h3 {
-		font-size: 2.2rem; /* 24px / 10px = 2.4rem */
+		font-size: 2.2rem; /* 22px / 10px = 2.2rem */
 		font-weight: 500;
 	}
 
@@ -324,5 +327,9 @@ footer p {
 	.legal {
 		margin-top: 3rem;
 		clear: left;
+	}
+
+	button {
+		width: 32%;
 	}
 }
