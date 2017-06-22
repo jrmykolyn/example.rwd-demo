@@ -25,7 +25,6 @@
 *:before,
 *:after {
 	box-sizing: border-box;
-	transition: all 0.2s;
 }
 
 html,
@@ -58,24 +57,15 @@ body {
 	line-height: 1.5;
 }
 
-header {
-	width: 100%;
-	height: 5rem; /* 50px / 10px = 5rem */
-	display: block;
-	background: #fff;
-	padding: 0 2rem;
-}
-
-main {
-	width: 100%;
-	max-width: 120rem; /* 1200px / 10px = 120rem */
-	display: block;
-	overflow: auto;
-}
-
 img {
 	max-width: 100%; /* Constrain images to size of parent container. */
 }
+
+h1,
+h2 {
+	font-family: 'Quicksand', Helvetica, Arial, sans-serif;
+}
+
 
 a,
 a:visited {
@@ -109,11 +99,18 @@ button:focus {
 	background: #13af90;
 }
 
-/* BRAND STYLES */
+/* HEADER STYLES */
+header {
+	width: 100%;
+	height: 5rem; /* 50px / 10px = 5rem */
+	display: block;
+	background: #fff;
+	padding: 0 2rem;
+}
+
 .brand {
 	color: #1abc9c;
 	margin: 0;
-	font-family: 'Jaldi', Helvetica, Arial, sans-serif;
 	font-size: 2rem; /* 20px / 10px = 2rem */
 	font-weight: 700;
 	line-height: 5rem; /* Setting the `line-height` equal to the height of the parent element causes the text to become vertically centred */
@@ -128,6 +125,14 @@ button:focus {
 	font-weight: 400;
 }
 
+/* MAIN STYLES */
+main {
+	width: 100%;
+	max-width: 120rem; /* 1200px / 10px = 120rem */
+	display: block;
+	overflow: auto;
+}
+
 /* INTRO STYLES */
 .intro {
 	display: none;
@@ -139,6 +144,8 @@ button:focus {
 	box-shadow: 0 0.5rem 2rem rgba( 0, 0, 0, 0.15 );
 	margin-bottom: 4rem; /* 40px / 10px = 4rem */
 	float: left;
+
+	font-size: 5rem;
 }
 
 .post * {
@@ -156,7 +163,6 @@ button:focus {
 
 .post h2 {
 	color: #1abc9c;
-	font-family: 'Jaldi'; /* FIXME */
 	font-size: 8.75vw; /* 28px / 320px (eg. mobile screen width) = 0.0875 (8.75vw) */
 	margin-bottom: 1rem; /* 10px / 10px = 1rem */
 }
@@ -220,12 +226,6 @@ footer p {
 		height: 6rem; /* 60px / 10px = 10rem */
 	}
 
-	main {
-		width: 94%; /* Element should never span 100% of available horizontal space. */
-		margin: 0 auto;
-		padding: 4rem 2rem;
-	}
-
 	.brand {
 		width: 94%; /* Element should never span 100% of available horizontal space. */
 		max-width: 120rem; /* 1200px / 10px = 120rem */
@@ -237,6 +237,12 @@ footer p {
 
 	.brand-supporting {
 		display: inline-block;
+	}
+
+	main {
+		width: 94%; /* Element should never span 100% of available horizontal space. */
+		margin: 0 auto;
+		padding: 4rem 2rem;
 	}
 
 	.post {
@@ -286,10 +292,9 @@ footer p {
 		color: #1abc9c;
 		display: inline-block;
 		margin-bottom: 3rem; /* 30px / 10px = 3rem */
-		padding-bottom: 0.3rem; /* 3px / 10px = 0.3rem */
+		padding-bottom: 1rem; /* 10px / 10px = 1rem */
 		border-bottom: 0.5rem #1abc9c solid;
 		font-size: 6rem; /* 60px / 10px = 6rem */
-		font-family: 'Jaldi'; /* FIXME */
 		line-height: 1.2; /* 72px / 60px (`font-size` of element) = 1.2 */
 	}
 
