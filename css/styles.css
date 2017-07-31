@@ -1,15 +1,25 @@
 /* -------------------------------------------------- */
-/* NOTES */
+/* HINTS, TIPS, AND TRICKS */
 /* -------------------------------------------------- */
 /*
-- Identify colours.
-	- ??????: ??????
-- Identify layouts.
-- Identify breakpoints.
-- Identify 'default' dimensions on layout elements.
-- Identify maximum dimensions of layout elements.
-- Build 'base' styles.
-- Build 'conditional' (eg. media query) styles.
+- When working from a reference, start by:
+	- Identifying the colours.
+	- Identifying the fonts/typefaces.
+- Write generic styles, then move on to more complex/specific styles.
+	- Generic styles include:
+		- elements that can be targeted by tag name (eg. 'main')
+		- links
+		- type elements ('h1', 'p', etc.)
+	- Complex/specific styles include:
+		- elements that must be targeted by class (eg. '.post')
+		- elements that must be targeted using a descendant selector.
+- When starting to write responsive styles:
+	- Identify the number of layouts.
+	- Identify when the layouts change (eg. the 'breakpoints').
+	- Test your media queries by making an obvious change to the document, and seeing if it's correctly applied.
+- Keep in mind:
+	- Preview your CSS in the browser often. Small mistakes can prevent entire stylesheets from being applied.
+	- If you're writing a rule that should only be applied when the screen is a certain size, make sure it's inside a media query!
 */
 
 /* -------------------------------------------------- */
@@ -37,8 +47,3 @@ body {
 /* -------------------------------------------------- */
 /* BASE STYLES */
 /* -------------------------------------------------- */
-/*
-HINTS:
-- Write generic styles first, move on to more specific styles.
-- Group related styles (eg. 'type styles', 'header styles', etc.)
-*/
