@@ -1,6 +1,6 @@
 {
   "name": "example.rwd-demo",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This project provides an opportunity for developers to put their understanding of responsive web design principles and techniques into practice.",
   "main": "index.js",
   "scripts": {
